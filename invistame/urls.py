@@ -1,8 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('/', include('index.urls')),
-    path('/', include('novo_investimento.urls')),
-    path('/', include('listagem.urls')),
+    path('', views.index),
+    path('novo_investimento/', views.novo_investimento, name='novo_investimento'),
+    path('listagem/', views.listagem, name='listagem'),
+    path('detalhes/', views.detalhes, name='detalhes')
 ]
