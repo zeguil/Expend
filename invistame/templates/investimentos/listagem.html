@@ -1,4 +1,5 @@
 <h1>Listagem de Investimentos</h1>
+<button><a href="{% url 'novo_investimento' %}">Novo</a></button>
 <table>
     <tr>
         <th>ID</th>
@@ -14,4 +15,4 @@
     </tr>
     {% endfor %}
 </table>
-<a href="{% url 'index' %}">Voltar</a>
+<button><a href="{% url 'index' %}">Voltar</a></button>
