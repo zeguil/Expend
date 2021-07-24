@@ -1,8 +1,17 @@
-<form method="POST">
-    {% csrf_token %}
-    <h1>Novo Investimento</h1>
-    {{formulario}}
-    <button type="submit">Salvar</button>
-    <button><a href="{% url 'index' %}">Voltar</a></button>
-
-</form>
+{% extends 'base.html' %}
+{% block title %}Novo Investimento{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <h1 style="text-align: center;">Novo Investimento</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{formulario | crispy}}
+        <div style="padding: 10px;">
+            <button style="margin-bottom: 20px;" class="btn btn-success" type="submit">Salvar</button>
+            <button style="margin-bottom: 20px;" class="btn btn-danger"><a style="color: white; text-decoration: none;"
+                    href="{% url 'index' %}">Voltar</a></button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,3 +1,13 @@
-<h1>Invistame</h1>
-<button><a href="{% url 'novo_investimento' %}">Novo</a></button>
-<button><a href="{% url 'listagem' %}">Listagem</a></button>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 style='text-align:center'>Invistame</h1>
+    <div class="button" style="display: flex; justify-content: center; margin:5 10px;">
+        <button style="margin-right: 15px;" class="btn btn-success"><a style="color: white; text-decoration: none;"
+                href="{% url 'novo_investimento' %}">Novo</a></button>
+        <button class="btn btn-primary"><a style="color: white; text-decoration: none;"
+                href="{% url 'listagem' %}">Listagem</a></button>
+    </div>
+</div>
+{% endblock %}
