@@ -16,7 +16,11 @@
             <td>{{dados.investimento}}</td>
             <td>{{dados.valor}}</td>
             <td>{{dados.data}}</td>
-            <td>{{dados.pago}}</td>
+            {% if dados.pago %}
+            <td>Sim</td>
+            {% else %}
+            <td>Não</td>
+            {% endif %}
         </tr>
     </table>
     <button class="btn btn-dark"><a style="color: white;text-decoration: none;"

@@ -44,7 +44,7 @@ def editar(request, id_investimento):
         formulario = InvestimentoForm(request.POST, instance=investimento)
         if formulario.is_valid():
             formulario.save()
-        return redirect('index')
+        return redirect('listagem')
 
 
 def excluir(request, id_investimento):
