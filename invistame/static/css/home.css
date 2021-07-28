@@ -1,5 +1,5 @@
 body{
-    background: url("/static/img/home4.png");
+    background: url("/static/img/home.svg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -14,27 +14,28 @@ body{
     transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 30%;
     padding: 20px;
     resize:none;
     overflow: auto;
+    max-width: 750px;
 }
 
 .container > h1{
-    color: gold;
+    color: #D2D2D2;
     text-shadow: #000 7px 4px 4px;
     text-align: center;
     font-size: 90px;
-    font-family: Impact, fantasy;
-    font-weight: 400
+    font-family: 'Overpass', sans-serif;
+    
+    
 }
 .container > p{
-    color: #fff;
-    text-shadow: #000 7px 4px 4px;
+    color: #FFFFFF;
+    text-shadow: #000 3px 1px 1px;
     text-align: center;
     font-size: 40px;
-    font-family: OCR A Std, monospace;
-    font-weight: 300
+    font-family: 'Overpass', sans-serif;
 }
 
 .button{
@@ -43,38 +44,33 @@ body{
     margin:5 10px;
 }
 button{
-    border-radius: 12px;
-    border-color: black;
-    color: black;
+    border-radius: 18px;
+    color: #27AE60;
     background-position: 100%;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;
     transition: background 500ms ease-in-out;
 }
-.btn-new{
-    margin-left: 40px;
-    margin-right: 15px;
-    background-color: #0D6EFD;
-    background-image: -webkit-linear-gradient(45deg, white 50%, transparent 50%);
-    background-image: linear-gradient(45deg, white 50%, transparent 50%);
-}
-.btn-new:hover{
-    background-position: 0;
-    box-shadow: 0 0 1em black;
-}
+
 .btn-list{
-    background-color: #157347;
-    background-image: -webkit-linear-gradient(45deg, white 50%, transparent 50%);
-    background-image: linear-gradient(45deg, white 50%, transparent 50%);
+    background-color: #1c7c4f;
+    background-image: -webkit-linear-gradient(45deg, #0c5835 50%, transparent 50%);
+    background-image: linear-gradient(45deg, #0c5835 50%, transparent 50%);
+    color:#212121;
     
 }
 .btn-list:hover{
     background-position: 0;
-    box-shadow: 0 0 1em black;
+   
 }
 .button > button > a {
-    color: black; 
+    color: #fff; 
     text-decoration: none;
     font-size: 30px;
-    font-family:Consolas; 
+    font-family: 'Overpass', sans-serif;
 }
+.button > button > a:hover {
+    color:#fff;
+}
+
+/* <a href='https://br.freepik.com/vetores/pessoas'>Pessoas vetor criado por pch.vector - br.freepik.com</a>
