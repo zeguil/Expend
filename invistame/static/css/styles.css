@@ -1,0 +1,8 @@
+body{
+    background: url("/static/img/page.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}

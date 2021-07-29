@@ -17,10 +17,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/svg" href="{% static 'img/icon-title.svg' %}" height="30" />
 </head>
 
 <body>
-    
+    <nav class="navbar navbar-light ">
+        <form class="container-fluid justify-content-end" style='margin-right: 20px; margin-top: 10px;'>
+          
+          <button class="btn btn-sm btn-outline-success" type="button"><a style="text-decoration: none; color: white;" href="https://github.com/zeguil/">Contato</a></button>
+        </form>
+      </nav>
     {% block content %}
     {% endblock %}
     

@@ -1,6 +1,6 @@
 
 body{
-    background: url("/static/img/home.svg");
+    background: url("/static/img/landing1.svg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -48,8 +48,7 @@ body{
     
 }
 button{
-    border-radius: 18px;
-    color: #27AE60;
+    border-radius: 25px;
     background-position: 100%;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;
