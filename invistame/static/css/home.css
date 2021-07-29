@@ -48,7 +48,7 @@ body{
     
 }
 button{
-    border-radius: 25px;
+    border-radius: 15px;
     background-position: 100%;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;

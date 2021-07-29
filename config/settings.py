@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'invistame.apps.InvistameConfig',
+    'users.apps.UsersConfig',
     'crispy_forms'
 ]
 
