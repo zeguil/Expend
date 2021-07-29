@@ -36,4 +36,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Django](https://www.djangoproject.com/)
 - [Bootstrap](https://getbootstrap.com/)
 
+<<<<<<< HEAD
 <a href="https://www.paypal.com/donate?business=EAH9AAPCYS94A&no_recurring=0&currency_code=BRL"><img width="100" src="images/badge.svg" alt="Badge"></a>
+=======
+<br>
+
+
+## Donate
+Se gostou desse projeto, você pode me dar uma xícara de café :) 
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?business=EAH9AAPCYS94A&no_recurring=0&currency_code=BRL)#
+
+
+>>>>>>> da559adc602f1a2f820c073141e37ac4c4b60bbb
