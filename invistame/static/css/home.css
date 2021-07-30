@@ -1,28 +1,40 @@
 
 body{
-    background: url("/static/img/landing1.svg");
+    background: url("/static/img/fundo.svg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
+    background-color: #1D1D1D;
+    padding: 0;
+    margin: 0;
+    
 }
 
 .container {
-    background: none;
-    filter: none;
-    width: 80%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    padding: 20px;
-    resize:none;
-    overflow: auto;
-    max-width: 820px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
 }
 
-.container > h1{
+.img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    left: 70px;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.intro > h1{
     color: #D2D2D2;
     text-shadow: #000 7px 4px 4px;
     text-align: center;
@@ -31,43 +43,34 @@ body{
     margin: 30px 0px;
     
 }
-.container > p{
+.intro > p{
     color: #FFFFFF;
     text-shadow: #000 3px 1px 1px;
     text-align: center;
     font-size: 30px;
     font-family: 'Overpass', sans-serif;
-    margin: 30px 0px;
-}
-
-.button{
-    display: flex; 
-    justify-content: center; 
-    margin:5 10px;
-    padding-top: 20px;
     
 }
-button{
+
+
+.intro > button{
     border-radius: 15px;
     background-position: 100%;
     background-size: 400%;
     -webkit-transition: background 300ms ease-in-out;
     transition: background 500ms ease-in-out;
-    
-}
-
-.btn-list{
     background-color: #1c7c4f;
     background-image: -webkit-linear-gradient(45deg, #0c5835 50%, transparent 50%);
     background-image: linear-gradient(45deg, #0c5835 50%, transparent 50%);
-    color:#212121;
-    padding: 2px 20px;
+    width: 40%;
+
 }
-.btn-list:hover{
+
+.intro > button:hover{
     background-position: 0;
    
 }
-.button > button > a {
+.intro button > a {
     color: #fff; 
     text-decoration: none;
     font-size: 30px;
@@ -77,4 +80,14 @@ button{
     color:#fff;
 }
 
-/* <a href='https://br.freepik.com/vetores/pessoas'>Pessoas vetor criado por pch.vector - br.freepik.com</a>
+footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: white;
+    margin-right: 5%;
+}
+
+.navbar-index{
+    width: 100%;
+}

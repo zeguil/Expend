@@ -1,15 +1,20 @@
 {% extends 'home.html' %}
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
 <div class="container">
-    <h1>INVISTA-ME</h1>
-    <p>Invista-me é um site desenvolvido com Django para administração dos seus investimentos e gastos pessoais.</p>
-    <div class="button">
-        
-        <button class="btn-list"><a
-                href="{% url 'listagem' %}">Entrar</a></button>
+    <div class="intro">
+        <h1>INVISTA-ME</h1>
+        <p>Invista-me é um site desenvolvido com Django para administração dos seus investimentos e gastos pessoais.</p>
+        <button ><a href="{% url 'listagem' %}">Entrar</a></button>
+    </div>
+    <div class='img'>
+        <img src="{% static 'img/man.svg' %}"" alt="icon">
     </div>
 </div>
+<footer>
+    By: José Guilherme Lins
+</footer>
 {% endblock %}
