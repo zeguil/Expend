@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Cadastro{% endblock %}
+{% block content %}
+<div class="container" >
+    <h1 style="text-align: center; color: white">Cadastrar Novo Usuário</h1>
+    <form method="POST" style='color: white; padding: 30px; color: white;'>
+        {% csrf_token %}
+        {{ formulario | crispy }}
+        <div style="padding-top: 30px;">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type='button' class="btn btn-danger"><a href="{% url 'index' %}" style="text-decoration:none; color:white;">Voltar</a></button><br>
+        <a href="{% url 'login' %}">Já possui uma conta? Entre aqui.</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

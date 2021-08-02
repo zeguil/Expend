@@ -23,10 +23,18 @@
 <body>
     <nav class="navbar navbar-light ">
         <form class="container-fluid justify-content-end" style='margin-right: 20px; margin-top: 10px;'>
-          
+          <a href="{% url 'login' %}" class="nav-link">Login</a>
+          <a href="{% url 'novo_usuario' %}" class="nav-link">Cadastrar</a>
           <button class="btn btn-sm btn-outline-success" type="button"><a style="text-decoration: none; color: white;" href="https://github.com/zeguil/">Contato</a></button>
         </form>
       </nav>
+    {% if messages %}
+    {% for message in messages %}
+    <div style="display: flex; justify-content: center;">
+        <div class='alert alert-{{ message.tags }}' style="width: 30%; display: flex; justify-content: center;">{{ message }}</div>
+    </div>
+    {% endfor %}
+    {% endif %}     
     {% block content %}
     {% endblock %}
     
