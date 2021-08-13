@@ -30,7 +30,7 @@
             class="d-inline-block align-text-top">
           INVISTA-ME
         </a>
-        <li>
+        <li style="display: flex; justify-content: center;">
           <strong class='nav-item nav-link'>Bem-Vindo(a) {{user.get_username.title}}</strong>
         </li>
         <button class="btn btn-sm btn-outline-secundary justify-content-end" type="button"><a href="{% url 'logout' %}"
@@ -39,6 +39,20 @@
           
         </nav>
       </div>
+      {% else %}
+      <div class="navbar-index">
+        <nav class="navbar navbar-light bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand text-success" style="font-family: 'Bungee', cursive;" href="{% url 'index' %}">
+              <img src="{% static 'img/icon-title.svg' %}" alt="icone" width="60" height="30"
+                class="d-inline-block align-text-top">
+              INVISTA-ME
+            </a>
+            
+            </div>
+              
+            </nav>
+          </div>
   {% endif %}
   {% block content %}
   {% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Investimento
 from .forms import InvestimentoForm
-
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, 'investimentos/index.html')
@@ -20,7 +20,7 @@ def novo_investimento(request):
         }
         return render(request, 'investimentos/novo_investimento.html', context=formulario)
 
-
+@login_required
 def listagem(request):
     dados = {
         'dados': Investimento.objects.all()
