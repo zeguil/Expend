@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% block title %}Login{% endblock %}
+{% block title %}Logout{% endblock %}
 {% block content %}
 <div class="container">
     <h1 style="text-align: center; color: white; padding-top: 20px;">Você saiu do sistema</h1>
@@ -9,7 +9,7 @@
         {{ form | crispy }}
         <div style="padding-top: 30px;">
             <a href="{% url 'login' %}" style="color:white; display: flex; justify-content: center;">Fazer login
-                novamente</a>
+                novamente!</a>
         </div>
     </form>
 </div>

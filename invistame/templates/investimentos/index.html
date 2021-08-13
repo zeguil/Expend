@@ -8,7 +8,7 @@
     <div class="intro">
         <h1>INVISTA-ME</h1>
         <p>Invista-me é um site desenvolvido com Django para administração dos seus investimentos e gastos pessoais.</p>
-        <button type="submit"><a href="{% url 'login' %}">Entrar</a></button>
+        <a class="btn btn-success" href="{% url 'login' %}">Entrar</a>
     </div>
     <div class='img'>
         <img src="{% static 'img/man.svg' %}"" alt="icon">
@@ -18,3 +18,4 @@
     By: José Guilherme Lins
 </footer>
 {% endblock %}
+
