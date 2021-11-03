@@ -12,7 +12,7 @@
             Contatos</a></button>
     <table class='table table-success table-hover table-striped border-dark'>
         <tr style="text-align: center; border-radius: 20px;" class="table-dark">
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Gastos</th>
             <th>Valor</th>
             <th></th>
@@ -21,7 +21,7 @@
         </tr>
         {% for dado in dados %}
         <tr style="text-align: center;">
-            <td>{{dado.id}}</td>
+            <!-- <td>{{dado.id}}</td> -->
             <td>{{dado.investimento}}</td>
             <td>{{dado.valor}}</td>
 
@@ -35,7 +35,7 @@
         {% endfor %}
 
     </table>
-    <h1 style="color: #fff;">Gasto Total: R$ {{soma.total}}</h1>
+    <h3 style="color: #fff;">Gasto Total: R$ {{soma.total}}</h3>
 
 
 </div>

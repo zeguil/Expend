@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -8,10 +9,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Agenda</title>
+  <title>Detalhes</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'  %}" rel="stylesheet">
 
 </head>
 
@@ -44,10 +45,10 @@
           <dd>{{ contato.email }}</dd>
 
           <dt>Aniversário</dt>
-          <dd>{{ contato.aniversario }}</dd>
+          <dd>{{ contato.aniversario|date:'d/m' }}</dd>
 
           <dt>Data criação</dt>
-          <dd>{{ contato.data }}</dd>
+          <dd>{{ contato.data|date:'d/m/y' }}</dd>
 
           <dt>Categoria</dt>
           <dd>{{ contato.categoria }}</dd>
@@ -60,6 +61,8 @@
 
       </div>
     </div>
+    <button class="btn btn-dark" style="margin-top: 50px;"><a style="color: white; text-decoration: none;"
+      href="{% url 'contatos' %}">Voltar</a></button>
   </div>
 
   <!-- Bootstrap core JavaScript -->

@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Investimento, Contato
-from .forms import InvestimentoForm
+from .forms import InvestimentoForm, ContatoForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
+from django.http import Http404
+from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'investimentos/index.html')
@@ -59,20 +61,36 @@ def excluir(request, id_investimento):
     else:
         return render(request, 'investimentos/confirmar_exclusao.html', {'item': investimento})
 
-def contatos(request):
-    contatos = {
+def meus_contatos(request):
+    contatos =  {
         'contatos': Contato.objects.all()
     }
-
+    
     return render(request, 'agenda/contatos.html', context=contatos)
 
-def ver_contato(request, id_contato):
-    contato = {
-        'contato': Contato.objects.get(pk=id_contato)
-    }
+def ver_contato(request, contato_id):
+    try:
+        contato =  Contato.objects.get(id=contato_id)
+    
 
-    return render(request, 'agenda/detalhes.html', contato)
+        return render(request, 'agenda/detalhes.html', {
+            'contato' : contato
+        })
+    except Contato.DoesNotExist as e:
+        raise Http404()
 
+def novo_contato(request):
+    if request.method == 'POST':
+        contato_form = ContatoForm(request.POST)
+        if contato_form.is_valid():
+            contato_form.save()
+        return redirect('index')
+    else:
+        contato_form = ContatoForm()
+        formulario = {
+            'formulario': contato_form
+        }
+        return render(request, 'investimentos/novo_investimento.html', context=formulario)
 
 
 

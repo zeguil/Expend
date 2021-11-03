@@ -1,0 +1,16 @@
+
+{% block title %}Novo Contato{% endblock %}
+
+{% load crispy_forms_tags %}
+<div class="container">
+    <h1 style="text-align: center; color:white;" >Novo Contato</h1>
+    <form method="POST" style="color: aliceblue; bottom: 20px;">
+        {% csrf_token %}
+        {{formulario | crispy}}
+        <div style="margin-top: 20px;" >
+            <button class="btn btn-success" type="submit">Salvar</button>
+            <button class="btn btn-danger"><a style="color: white; text-decoration: none;"
+                    href="{% url 'contatos' %}">Voltar</a></button>
+        </div>
+    </form>
+</div>
