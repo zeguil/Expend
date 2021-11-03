@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Investimento
+from .models import Investimento, Contato
 from .forms import InvestimentoForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 
 def index(request):
     return render(request, 'investimentos/index.html')
@@ -23,8 +24,11 @@ def novo_investimento(request):
 @login_required
 def listagem(request):
     dados = {
-        'dados': Investimento.objects.all()
+        'dados': Investimento.objects.all(),
+        'soma' : Investimento.objects.all().aggregate(total=Sum('valor'))
     }
+   
+ 
     return render(request, 'investimentos/listagem.html', context=dados)
 
 
@@ -54,3 +58,23 @@ def excluir(request, id_investimento):
         return redirect('listagem')
     else:
         return render(request, 'investimentos/confirmar_exclusao.html', {'item': investimento})
+
+def contatos(request):
+    contatos = {
+        'contatos': Contato.objects.all()
+    }
+
+    return render(request, 'agenda/contatos.html', context=contatos)
+
+def ver_contato(request, id_contato):
+    contato = {
+        'contato': Contato.objects.get(pk=id_contato)
+    }
+
+    return render(request, 'agenda/detalhes.html', contato)
+
+
+
+
+
+

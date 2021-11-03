@@ -3,14 +3,17 @@
 {% block content %}
 
 <div class="container">
-    <h1 style="text-align: center; color: #fff; margin-top: 20px">Meus Investimentos</h1>
+    <h1 style="text-align: center; color: #fff; margin-top: 20px">Meus Gastos</h1>
 
     <button class="btn btn-success" style="margin-bottom: 10px;"><a style="color: white; text-decoration: none;"
-            href="{% url 'novo_investimento' %}">Novo Investimento</a></button>
+            href="{% url 'novo_investimento' %}">Novo Gasto</a></button><button class="btn btn-outline-secondary"
+        style="margin-bottom: 10px; margin-left: 10px;"><a style="color: white; text-decoration: none;"
+            href="{% url 'contatos' %}">Meus
+            Contatos</a></button>
     <table class='table table-success table-hover table-striped border-dark'>
         <tr style="text-align: center; border-radius: 20px;" class="table-dark">
             <th>ID</th>
-            <th>Investimento</th>
+            <th>Gastos</th>
             <th>Valor</th>
             <th></th>
             <th></th>
@@ -21,6 +24,7 @@
             <td>{{dado.id}}</td>
             <td>{{dado.investimento}}</td>
             <td>{{dado.valor}}</td>
+
             <td><button class="btn btn-primary"><a style='color: black;text-decoration: none;'
                         href="{% url 'detalhes' dado.id %}">Detalhes</a></button></td>
             <td><button class="btn btn-warning"><a style='color: black;text-decoration: none;'
@@ -29,9 +33,13 @@
                         href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
         </tr>
         {% endfor %}
+
     </table>
+    <h1 style="color: #fff;">Gasto Total: R$ {{soma.total}}</h1>
+
 
 </div>
 
+<!-- aqui -->
 
 {% endblock %}
