@@ -1,4 +1,4 @@
-# Invista-me
+# EXPEND
 Aplicação web para administração de gastos feita com python e django
 
 ### 🎲 Rodando o site
