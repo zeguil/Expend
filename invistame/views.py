@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Investimento, Contato
+from .models import Gasto, Contato
 from .forms import InvestimentoForm, ContatoForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
@@ -26,8 +26,8 @@ def novo_investimento(request):
 @login_required
 def listagem(request):
     dados = {
-        'dados': Investimento.objects.all(),
-        'soma' : Investimento.objects.all().aggregate(total=Sum('valor'))
+        'dados': Gasto.objects.all(),
+        'soma' : Gasto.objects.all().aggregate(total=Sum('valor'))
     }
    
  
@@ -36,13 +36,13 @@ def listagem(request):
 
 def detalhes(request, id_investimento):
     dados = {
-        'dados': Investimento.objects.get(pk=id_investimento)
+        'dados': Gasto.objects.get(pk=id_investimento)
     }
     return render(request, 'investimentos/detalhes.html', dados)
 
 
 def editar(request, id_investimento):
-    investimento = Investimento.objects.get(pk=id_investimento)
+    investimento = Gasto.objects.get(pk=id_investimento)
     if request.method == 'GET':
         formulario = InvestimentoForm(instance=investimento)
         return render(request, 'investimentos/novo_investimento.html', {'formulario': formulario})
@@ -54,7 +54,7 @@ def editar(request, id_investimento):
 
 
 def excluir(request, id_investimento):
-    investimento = Investimento.objects.get(pk=id_investimento)
+    investimento = Gasto.objects.get(pk=id_investimento)
     if request.method == 'POST':
         investimento.delete()
         return redirect('listagem')
@@ -95,4 +95,11 @@ def novo_contato(request):
 
 
 
+def busca(request):
+    
+    dados = {
+        'dados': Gasto.objects.all(),
+        'soma' : Gasto.objects.all().aggregate(total=Sum('valor'))
+    }
 
+    return render(request, 'investimentos/busca.html', context=dados)
