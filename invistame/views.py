@@ -113,3 +113,6 @@ def categoria(request, id_categoria):
         'soma' : Gasto.objects.order_by('categoria').filter(categoria=id_categoria).aggregate(total=Sum('valor'))
     }
     return render(request, 'investimentos/categoria.html', dados)
+
+def faleconosco(request):
+    return render(request, 'investimentos/faleconosco.html' )

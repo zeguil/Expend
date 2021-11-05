@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Investimentos{% endblock %}
+{% block content %}
+
+<head>
+  <style>
+    /*==================================================
+  Nearby People CSS
+  ==================================================*/
+
+
+    p,
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: white;
+      text-decoration: none;
+    }
+
+    .people-nearby .google-maps {
+
+      border-radius: 4px;
+      border: 1px solid #f1f2f2;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .people-nearby .google-maps .map {
+      height: 300px;
+      width: 100%;
+      border: none;
+    }
+
+    .people-nearby .nearby-user {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #f1f2f2;
+      margin-bottom: 20px;
+    }
+
+    img.profile-photo-lg {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="people-nearby">
+
+        <div class="nearby-user">
+          <div class="row">
+            <div class="col-md-2 col-sm-7">
+              <img src="{% static 'img/jose.jpeg' %}" alt="user" class="profile-photo-lg">
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <h2><a href="#" class="profile-link">José Guilherme</a></h2>
+              <p>Back-end</p>
+
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <button class="btn btn-primary pull-right"><a href="https://github.com/zeguil">Contato</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="nearby-user">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <img src="{% static 'img/joao.jpeg' %}" alt="user" class="profile-photo-lg">
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <h2><a href="#" class="profile-link">João Mateus</a></h2>
+              <p>Front-end</p>
+
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <button class="btn btn-primary pull-right"><a href="https://github.com/joaomateuus">Contato</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="nearby-user">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <img src="{% static 'img/josue.jpeg' %}" alt="user" class="profile-photo-lg">
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <h2><a href="#" class="profile-link">Josué da Silva</a></h2>
+              <p>DBA</p>
+
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <button class="btn btn-primary pull-right"><a href="https://github.com/">Contato</a></button>
+            </div>
+          </div>
+        </div>
+
+        {% endblock %}
