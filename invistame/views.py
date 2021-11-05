@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from .models import Gasto, Contato
 from .forms import InvestimentoForm, ContatoForm
 from django.contrib.auth.decorators import login_required
-from django.db.models import Sum
+from django.db.models import Sum, Q
 from django.http import Http404
 from django.core.paginator import Paginator
 
@@ -96,10 +96,20 @@ def novo_contato(request):
 
 
 def busca(request):
-    
+    termo = request.GET.get('termo')
     dados = {
-        'dados': Gasto.objects.all(),
-        'soma' : Gasto.objects.all().aggregate(total=Sum('valor'))
+        'dados': Gasto.objects.order_by('id').filter(
+            gasto__icontains=termo
+        ),
+        'soma' : Gasto.objects.order_by('categoria').filter(categoria=1).aggregate(total=Sum('valor'))
     }
 
     return render(request, 'investimentos/busca.html', context=dados)
+
+
+def categoria(request, id_categoria):
+    dados = {
+        'dados': Gasto.objects.order_by('categoria').filter(categoria=id_categoria),
+        'soma' : Gasto.objects.order_by('categoria').filter(categoria=id_categoria).aggregate(total=Sum('valor'))
+    }
+    return render(request, 'investimentos/categoria.html', dados)

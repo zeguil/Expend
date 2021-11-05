@@ -1,9 +1,83 @@
-<br><br>
-<form method="get" action="{% url 'busca' %}">
-  <div class="form-group row">
-    <div class="col-12">
-      <input class="form-control" type="search" value="{{ request.GET.termo }}" id="search-input"
-        placeholder="Digite sua pesquisa" name="termo">
-    </div>
-  </div>
-</form>
+{% extends 'base.html' %}
+{% block title %}Investimentos{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1 style="text-align: center; color: #fff; margin-top: 20px">Meus Gastos</h1>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+          
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <button class="btn btn-success" style="margin-bottom: 10px;"><a style="color: white; text-decoration: none;"
+                    href="{% url 'novo_investimento' %}">Novo Gasto</a></button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-outline-secondary"
+                        style="margin-bottom: 10px; margin-left: 10px;"><a style="color: white; text-decoration: none;"
+                            href="{% url 'contatos' %}">Meus
+                            Contatos</a></button>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" >
+                  categorias
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="{% url 'categoria' 1 %}">comida</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 2 %}">contas</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 3 %}">gasolina</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 4 %}">diversão</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 5 %}">compras</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 6 %}">outros</a></li>
+                    <li><a class="dropdown-item" href="{% url 'listagem' %}">TUDO</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <form class="d-flex" method="get" action="{% url 'busca' %}">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name=termo>
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+    <table class='table table-success table-hover table-striped border-dark'>
+        <tr style="text-align: center; border-radius: 20px;" class="table-dark">
+            <!-- <th>ID</th> -->
+            <th>Gastos</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for dado in dados %}
+        <tr style="text-align: center;">
+            <!-- <td>{{dado.id}}</td> -->
+            <td>{{dado.gasto}}</td>
+            <td>{{dado.valor}}</td>
+            <td>{{dado.categoria}}</td>
+
+            <td><button class="btn btn-primary"><a style='color: black;text-decoration: none;'
+                        href="{% url 'detalhes' dado.id %}">Detalhes</a></button></td>
+            <td><button class="btn btn-warning"><a style='color: black;text-decoration: none;'
+                        href="{% url 'editar' dado.id %}">Editar</a></button></td>
+            <td><button class="btn btn-danger"><a style='color: black;text-decoration: none;'
+                        href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+    <!-- <h3 style="color: #fff;">Gasto Total: R$ {{soma.total}}</h3> -->
+    
+
+
+</div>
+
+<!-- aqui -->
+
+{% endblock %}

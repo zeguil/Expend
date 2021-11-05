@@ -24,18 +24,19 @@
                   categorias
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="{% url 'categoria' 1 %}">comida</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categoria' 2 %}">contas</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categoria' 3 %}">gasolina</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categoria' 4 %}">diversão</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categoria' 5 %}">compras</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categoria' 6 %}">outros</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 1 %}">comida</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 2 %}">contas</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 3 %}">gasolina</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 4 %}">diversão</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 5 %}">compras</a></li>
+                    <li><a class="dropdown-item" href="{% url 'categoria' 6 %}">outros</a></li>
+                    <li><a class="dropdown-item" href="{% url 'listagem' %}">TUDO</a></li>
                 </ul>
               </li>
               
             </ul>
             <form class="d-flex" method="get" action="{% url 'busca' %}">
-              <input class="form-control me-2" type="search" placeholder="buscar gasto..." aria-label="Search" name=termo>
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
           </div>
@@ -70,7 +71,12 @@
         {% endfor %}
 
     </table>
+    {% if soma.total %}
     <h3 style="color: #fff;">Gasto Total: R$ {{soma.total}}</h3>
+    {% else %}
+    <h4 style="color: rgb(224, 61, 61); text-align: center;">você não possui gastos nessa categoria!</h4>
+    
+    {% endif %}
 
 
 </div>
