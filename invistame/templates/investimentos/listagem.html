@@ -15,6 +15,7 @@
             <!-- <th>ID</th> -->
             <th>Gastos</th>
             <th>Valor</th>
+            <th>Categoria</th>
             <th></th>
             <th></th>
             <th></th>
@@ -22,8 +23,9 @@
         {% for dado in dados %}
         <tr style="text-align: center;">
             <!-- <td>{{dado.id}}</td> -->
-            <td>{{dado.investimento}}</td>
+            <td>{{dado.gasto}}</td>
             <td>{{dado.valor}}</td>
+            <td>{{dado.categoria}}</td>
 
             <td><button class="btn btn-primary"><a style='color: black;text-decoration: none;'
                         href="{% url 'detalhes' dado.id %}">Detalhes</a></button></td>

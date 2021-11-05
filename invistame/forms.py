@@ -1,10 +1,10 @@
 from django.forms import ModelForm, fields
-from .models import Investimento, Contato
+from .models import Gasto, Contato
 
 
 class InvestimentoForm(ModelForm):
     class Meta:
-        model = Investimento
+        model = Gasto
         fields = '__all__'
 
 class ContatoForm(ModelForm):

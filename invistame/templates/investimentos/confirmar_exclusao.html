@@ -3,12 +3,13 @@
 {% block content %}
 <div class="container">
     <form method="POST" style='padding: 30px;''>
-        <h1 style="text-align:center; color: white;">Confirmar a exclusão de {{ item.investimento }}?</h1>
+        <h1 style="text-align:center; color: white;">Confirmar a exclusão de {{ item.gasto }}?</h1>
         {% csrf_token %}
-        <div class='btn-delete' style="display: flex; justify-content: center; padding: 10px 10px;">
+        <div class=' btn-delete' style="display: flex; justify-content: center; padding: 10px 10px;">
         <button class='btn btn-success' style="margin-right: 20px;" type="submit">Confirmar</button>
-        <button class='btn btn-secondary' ><a href=' {% url "listagem" %}' style="text-decoration: none; color: white;">Cancelar</a></button>
-        </div>
-    </form>
+        <button class='btn btn-secondary'><a href=' {% url "listagem" %}'
+                style="text-decoration: none; color: white;">Cancelar</a></button>
+</div>
+</form>
 </div>
 {% endblock %}

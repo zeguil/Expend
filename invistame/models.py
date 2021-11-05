@@ -4,14 +4,23 @@ import time
 
 from django.db.models.fields import DateTimeField
 
+class CategoriaGasto(models.Model):
+    nome = models.CharField(max_length=50, null=True)
 
-class Investimento(models.Model):
-    investimento = models.TextField(max_length=200)
+    def __str__(self):
+        return self.nome
+
+
+class Gasto(models.Model):
+    gasto = models.TextField(max_length=200)
     valor = models.FloatField(max_length=9)
     pago = models.BooleanField(default=False)
     data = models.DateTimeField(default=timezone.now)
     hora = models.TimeField(default=time.strftime('%H:%M', time.localtime()))
+    categoria = models.ForeignKey(CategoriaGasto, on_delete=models.DO_NOTHING)
 
+    def __str__(self):
+        return self.gasto
 
 class CategoriaContato(models.Model):
     nome = models.CharField(max_length=100)

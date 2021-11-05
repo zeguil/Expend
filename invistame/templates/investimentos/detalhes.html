@@ -6,16 +6,18 @@
     <table class='table table-success table-hover table-striped border-dark ' style="margin-top: 20px;">
         <tr style="text-align: center; margin-top: 20px;" class="table-dark">
             <th>Id</th>
-            <th>Investimento</th>
+            <th>Gasto</th>
             <th>Valor</th>
+            <th>Categoria</th>
             <th>Data</th>
             <th>Hora</th>
             <th>Pago</th>
         </tr>
         <tr style="text-align: center;">
             <td>{{dados.id}}</td>
-            <td>{{dados.investimento}}</td>
+            <td>{{dados.gasto}}</td>
             <td>{{dados.valor}}</td>
+            <td>{{dados.categoria}}</td>
             <td>{{dados.data}}</td>
             <td>{{dados.hora}}</td>
             {% if dados.pago %}
